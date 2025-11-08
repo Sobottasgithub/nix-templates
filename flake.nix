@@ -6,20 +6,20 @@
     templates = {
 
       empty = {
-        path = ./empty;
+        source = ./empty;
         description = "Empty flake";
       };
 
-      python = {
-        path = ./java;
+      java = {
+        source = ./java;
         description = "Java template";
         welcomeText = ''
           # Getting started
           - Run `nix run`
         '';
       };
-      
-    defaultTemplate = self.templates.empty;
+    };
 
+    defaultTemplate = self.templates.empty;
   };
 }

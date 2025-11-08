@@ -1,5 +1,2 @@
-Show template:
-nix flake show github:Sobottasgithub/java-template/main
-
-Use template:
-nix flake init --template github:Sobottasgithub/java-template/main
+To use the flake execute the following in your directory:
+nix flake init --template github:Sobottasgithub/nix-templates#java
