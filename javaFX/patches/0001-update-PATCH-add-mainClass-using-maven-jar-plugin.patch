@@ -1,0 +1,36 @@
+From 103aed1c54dee756e53d942335858b97736843ac Mon Sep 17 00:00:00 2001
+From: Ture Bentzin <ture.bentzin@alumni.fh-aachen.de>
+Date: Tue, 23 Sep 2025 16:23:38 +0000
+Subject: [PATCH] update (PATCH): add mainClass using maven-jar-plugin
+
+---
+ pom.xml | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/pom.xml b/pom.xml
+index 08999da..f4af8ec 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -144,6 +144,19 @@
+                     </execution>
+                 </executions>
+             </plugin>
++            <plugin>
++              <groupId>org.apache.maven.plugins</groupId>
++              <artifactId>maven-jar-plugin</artifactId>
++              <version>3.3.0</version>
++              <configuration>
++                <archive>
++                  <manifest>
++                    <addClasspath>true</addClasspath>
++                    <mainClass>ps.edu.javafx.Application</mainClass>
++                  </manifest>
++                </archive>
++              </configuration>
++            </plugin>
+         </plugins>
+     </build>
+ </project>
+-- 
+2.50.1
+
