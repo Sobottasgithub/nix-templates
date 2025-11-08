@@ -17,6 +17,15 @@
           - Run `nix run`
         '';
       };
+
+      javaFX = {
+        path = ./javaFX;
+        description = "JavaFX template";
+        welcomeText = ''
+          # Getting started
+          - Run `nix run`
+        '';
+      };
     };
 
     # Optional: a default template
