@@ -27,7 +27,7 @@
         '';
       };
 
-      baisc = {
+      basic = {
         path = ./basic;
         description = "flake utils with devshell";
         welcomeTest = ''
