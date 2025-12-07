@@ -8,6 +8,9 @@
 
   outputs =
     inputs@{ flake-parts, ... }:
+    let
+      projectName = "BasicShell"; # FIXME: Name of the software / product bundled here
+    in
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
       ];
@@ -26,7 +29,21 @@
           system,
           ...
         }:
+        let
+          pkgsPackages = with pkgs; [
+            # FIXME: add pkgs packages here
+          ];
+          packages = [
+            # FIXME: add packages you defined here
+          ]
+          ++ pkgsPackages;
+        in
         {
+          devShells.default = pkgs.mkShell {
+            name = "${projectName}-devshell";
+
+            inherit packages;
+          };
         };
       flake = {
       };
