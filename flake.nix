@@ -35,29 +35,30 @@
           direnv allow
         '';
       };
-    };
 
-    cpp = {
-      path = ./cpp;
-      description = "Cpp template";
-      welcomeText = ''
-        # Getting started
-        - Run `nix run`
-      '';
-    };
+      cpp = {
+        path = ./cpp;
+        description = "Cpp template";
+        welcomeText = ''
+          # Getting started
+          - Run `nix run`
+        '';
+      };
 
-    cpp-multi = {
-      path = ./cpp-multi;
-      description = "Cpp multi app template";
-      welcomeText = ''
-        # Welcome to your cpp multi application!
-        - Run 'nix run .#A' or 'nix run .#B' to start your experience! 
-      ''
-    }
+      cpp-multi = {
+        path = ./cpp-multi;
+        description = "Cpp multi app template";
+        welcomeText = ''
+          # Welcome to your cpp multi application!
+          - Run 'nix run .#A' or 'nix run .#B' to start your experience! 
+        ''
+      };
+    
 
-    templates.default = {
-      path = ./empty;
-      description = "Empty flake";
+      templates.default = {
+        path = ./empty;
+        description = "Empty flake";
+      };
     };
   };
 }
