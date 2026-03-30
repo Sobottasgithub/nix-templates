@@ -46,6 +46,15 @@
       '';
     };
 
+    cpp-multi = {
+      path = ./cpp-multi;
+      description = "Cpp multi app template";
+      welcomeText = ''
+        # Welcome to your cpp multi application!
+        - Run 'nix run .#A' or 'nix run .#B' to start your experience! 
+      ''
+    }
+
     templates.default = {
       path = ./empty;
       description = "Empty flake";
