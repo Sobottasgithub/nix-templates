@@ -51,7 +51,7 @@
         welcomeText = ''
           # Welcome to your cpp multi application!
           - Run 'nix run .#A' or 'nix run .#B' to start your experience! 
-        ''
+        '';
       };
     
 
