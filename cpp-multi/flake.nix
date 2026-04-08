@@ -12,7 +12,7 @@
       packagesList = with pkgs; [ cmake gcc gnumake ];
     in {
       packages.${system} = {
-        client = pkgs.stdenv.mkDerivation {
+        A = pkgs.stdenv.mkDerivation {
           name = "A";
           pname = "A";
 
@@ -35,7 +35,7 @@
           '';
         };
 
-        server = pkgs.stdenv.mkDerivation {
+        B = pkgs.stdenv.mkDerivation {
           name = "B";
           pname = "B";
 
