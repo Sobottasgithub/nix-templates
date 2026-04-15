@@ -53,7 +53,14 @@
           - Run 'nix run .#A' or 'nix run .#B' to start your experience! 
         '';
       };
-    
+
+      latex = {
+        path = ./latex;
+        description = "Latex template";
+        welcomeText = ''
+          # Have fun with your fully working latex experience!
+        '';
+      };
 
       templates.default = {
         path = ./empty;
