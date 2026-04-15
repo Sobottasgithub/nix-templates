@@ -25,14 +25,13 @@
             which
             python39Packages.pygments
           ];
-          packages = [ texlab zathura wmctrl ] ++ pkgsPackages;
+          packages = with pkgs; [ texlab zathura wmctrl ] ++ pkgsPackages;
         in {
           devShells.default = pkgs.mkShell {
-            buildInputs = [
-              my-tex
+            buildInputs = with pkgs; [
               pkgs.python311Packages.pygments
               pkgs.which
-            ]
+            ];
           };
         };
       flake = { };
