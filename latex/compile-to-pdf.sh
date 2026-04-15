@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-name=$1
+name="latex-template"
 
-if [[ -z "$name" ]]; then
-  name = "latex-template"
+if [[ -z "$1" ]]; then
+  name=$1
 fi
 
 if [ ! -d "./build" ]; then

@@ -20,21 +20,12 @@
                 scheme-medium framed titlesec cleveref multirow wrapfig tabu
                 threeparttable threeparttablex makecell environ biblatex biber
                 fvextra upquote catchfile xstring csquotes minted dejavu comment
-                footmisc xltabular ltablex;
+                footmisc xltabular ltablex latexmk;
             })
             which
-            python39Packages.pygments
           ];
-          packages = [ texlab zathura wmctrl ] ++ pkgsPackages;
-        in {
-          devShells.default = pkgs.mkShell {
-            buildInputs = [
-              my-tex
-              pkgs.python311Packages.pygments
-              pkgs.which
-            ]
-          };
-        };
+          packages = with pkgs; [ texlab zathura wmctrl ] ++ pkgsPackages;
+        in { devShells.default = pkgs.mkShell { buildInputs = packages; }; };
       flake = { };
     };
 }
