@@ -17,10 +17,8 @@
           pkgsPackages = with pkgs; [
             (texlive.combine {
               inherit (texlive)
-                scheme-medium framed titlesec cleveref multirow wrapfig tabu
-                threeparttable threeparttablex makecell environ biblatex biber
-                fvextra upquote catchfile xstring csquotes minted dejavu comment
-                footmisc xltabular ltablex latexmk;
+                scheme-medium
+                latexmk;
             })
             which
           ];
