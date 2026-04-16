@@ -27,4 +27,5 @@
           packages = with pkgs; [ texlab zathura wmctrl ] ++ pkgsPackages;
         in { devShells.default = pkgs.mkShell { buildInputs = packages; }; };
       flake = { };
-    }}
+    };
+}
