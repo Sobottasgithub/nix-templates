@@ -1,7 +1,20 @@
-\documentclass{article}
+\documentclass[twoside]{article}
+\usepackage{fancyhdr}
+
+\usepackage[paperheight=16cm, paperwidth=12cm,% Set the height and width of the paper
+includehead,
+nomarginpar,% We don't want any margin paragraphs
+textwidth=10cm,% Set \textwidth to 10cm
+headheight=25pt,% Set \headheight to 25pt to accommodate the multiline header
+]{geometry}
+
 \begin{document}
-\date{DD/MM/YYYY}
-\maketitle
+\pagestyle{fancy}
+\fancyhead{} % Clear headers
+\fancyhead[RO,LE]{\textbf{Template Name} (DD/MM/YYYY)\\\textbf{Topic}}
+\fancyfoot{} % Clear footer
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{From: Patrick Schulze}
 
 \input{sections/section1.tex}
 
