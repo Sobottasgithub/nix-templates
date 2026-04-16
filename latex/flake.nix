@@ -20,6 +20,7 @@
                 scheme-medium
                 geometry
                 fancyhdr
+                pgfplots
                 latexmk;
             })
           ];
