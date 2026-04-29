@@ -62,6 +62,14 @@
         '';
       };
 
+      python = {
+        path = ./python;
+        description = "Python template";
+        welcomeText = ''
+          # Have fun with your fully working python experience! 
+        '';
+      }
+
       templates.default = {
         path = ./empty;
         description = "Empty flake";
