@@ -68,7 +68,7 @@
         welcomeText = ''
           # Have fun with your fully working python experience! 
         '';
-      }
+      };
 
       templates.default = {
         path = ./empty;
