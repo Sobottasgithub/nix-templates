@@ -14,3 +14,4 @@ nix flake new YOURDIRECTORY --template github:Sobottasgithub/nix-templates#TEMPL
 - java
 - javaFX
 - latex
+- pyhton
