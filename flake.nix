@@ -70,6 +70,17 @@
         '';
       };
 
+      rust = {
+        path = ./rust;
+        description = "Rust template";
+        welcomeText = ''
+          # Have fun with your fully working python experience!
+          try:
+
+          nix run
+        '';
+      };
+
       templates.default = {
         path = ./empty;
         description = "Empty flake";
