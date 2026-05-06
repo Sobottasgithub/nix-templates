@@ -1,0 +1,4 @@
+[[language]]
+name = "php"
+formatter = { command = "pretty-php" }
+auto-format = true

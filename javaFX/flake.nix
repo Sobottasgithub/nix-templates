@@ -69,7 +69,7 @@
           maven
         ];
 
-        shellHook = '''';
+        shellHook = "";
       };
     };
 }
