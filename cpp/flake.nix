@@ -1,16 +1,24 @@
 {
   description = "C++ template";
 
-  inputs = { nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable"; };
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+  };
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
 
       version = "1.2";
-      packagesList = with pkgs; [ cmake gcc gnumake ];
-    in {
+      packagesList = with pkgs; [
+        cmake
+        gcc
+        gnumake
+      ];
+    in
+    {
 
       packages.${system} = {
         default = pkgs.stdenv.mkDerivation {
@@ -36,8 +44,10 @@
       };
 
       devShells.${system}.default =
-        let devPackages = packagesList ++ [ pkgs.bridge-utils ];
-        in pkgs.mkShell {
+        let
+          devPackages = packagesList ++ [ pkgs.bridge-utils ];
+        in
+        pkgs.mkShell {
           packages = devPackages;
 
           # bring build tools from our package

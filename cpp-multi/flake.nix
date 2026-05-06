@@ -1,16 +1,24 @@
 {
   description = "Cpp multi app setup";
 
-  inputs = { nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable"; };
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+  };
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
 
       version = "1.0";
-      packagesList = with pkgs; [ cmake gcc gnumake ];
-    in {
+      packagesList = with pkgs; [
+        cmake
+        gcc
+        gnumake
+      ];
+    in
+    {
       packages.${system} = {
         A = pkgs.stdenv.mkDerivation {
           name = "A";
@@ -70,18 +78,23 @@
         };
       };
 
-      devShells.${system}.default = let
-        devPackages = packagesList ++ [ pkgs.bridge-utils pkgs.clang-tools ];
-      in pkgs.mkShell {
-        packages = devPackages;
+      devShells.${system}.default =
+        let
+          devPackages = packagesList ++ [
+            pkgs.bridge-utils
+            pkgs.clang-tools
+          ];
+        in
+        pkgs.mkShell {
+          packages = devPackages;
 
-        # bring build tools from our package
-        inputsFrom = [ self.packages.${system}.default ];
+          # bring build tools from our package
+          inputsFrom = [ self.packages.${system}.default ];
 
-        shellHook = ''
-          git status
-          cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-        '';
-      };
+          shellHook = ''
+            git status
+            cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+          '';
+        };
     };
 }
