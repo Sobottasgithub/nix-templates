@@ -94,10 +94,15 @@
 
         jupyter = {
           path = ./jupyter;
-          description = "Jupyterlab flake ";
+          description = "Jupyterlab flake";
           welcomeText = ''
             Run `nix run .#jupyterlab` to start a jupyterlab instance
           '';
+        };
+
+        pythonEnv = {
+          path = ./pythonEnv;
+          description = "Python Environment";
         };
 
         templates.default = {
