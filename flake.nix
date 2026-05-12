@@ -92,6 +92,14 @@
           '';
         };
 
+        jupyter = {
+          path = ./jupyter;
+          description = "Jupyterlab flake ";
+          welcomeText = ''
+            Run `nix run .#jupyterlab` to start a jupyterlab instance
+          '';
+        };
+
         templates.default = {
           path = ./empty;
           description = "Empty flake";
