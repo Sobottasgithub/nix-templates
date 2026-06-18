@@ -20,15 +20,6 @@
           '';
         };
 
-        javaFX = {
-          path = ./javaFX;
-          description = "JavaFX template";
-          welcomeText = ''
-            # Getting started
-            - Run `nix run`
-          '';
-        };
-
         basic = {
           path = ./basic;
           description = "flake utils with devshell";

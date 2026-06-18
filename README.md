@@ -12,7 +12,6 @@ nix flake new YOURDIRECTORY --template github:Sobottasgithub/nix-templates#TEMPL
 - cpp-multi
 - cpp
 - java
-- javaFX
 - latex
 - pyhton
 - rust
