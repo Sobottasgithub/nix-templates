@@ -9,6 +9,7 @@ nix flake new YOURDIRECTORY --template github:Sobottasgithub/nix-templates#TEMPL
 # Templates
 - basic
 - empty
+- cpp-lib
 - cpp-multi
 - cpp
 - java

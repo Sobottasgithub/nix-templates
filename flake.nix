@@ -47,6 +47,16 @@
           '';
         };
 
+        cpp-lib = {
+          path = ./cpp-lib;
+          description = "Cpp lib template";
+          welcomeText = ''
+            # Welcome to your cpp lib template!
+            Do not forget to change all template occurences with your name.
+            - Run 'nix run .#test' to test your lib
+          '';
+        };
+
         latex = {
           path = ./latex;
           description = "Latex template";
