@@ -62,6 +62,7 @@
           description = "Latex template";
           welcomeText = ''
             # Have fun with your fully working latex experience!
+            to build use nix build
           '';
         };
 
