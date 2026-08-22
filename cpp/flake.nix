@@ -45,7 +45,15 @@
 
       devShells.${system}.default =
         let
-          devPackages = packagesList ++ [ pkgs.bridge-utils ];
+          devPackages = packagesList ++ [
+           pkgs.bridge-utils
+           pkgs.clang-tools
+
+           pkgs.man-db
+           pkgs.man-pages
+           pkgs.man-pages-posix
+           pkgs.stdman
+         ];
         in
         pkgs.mkShell {
           packages = devPackages;
@@ -53,7 +61,10 @@
           # bring build tools from our package
           inputsFrom = [ self.packages.${system}.default ];
 
+          extraOutputsToInstall = [ "man" "doc" ];
+
           shellHook = ''
+            export MANPATH="${pkgs.man-pages}/share/man:${pkgs.man-pages-posix}/share/man:$MANPATH"
             git status
           '';
         };
