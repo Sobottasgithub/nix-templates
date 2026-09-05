@@ -57,6 +57,15 @@
           '';
         };
 
+        assembly = {
+          path = ./assembly;
+          description = "Assembly template";
+          welcomeText = ''
+            # Getting started
+            - Run `nix run`
+          '';
+        };
+
         latex = {
           path = ./latex;
           description = "Latex template";

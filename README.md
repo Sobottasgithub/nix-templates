@@ -18,3 +18,4 @@ nix flake new YOURDIRECTORY --template github:Sobottasgithub/nix-templates#TEMPL
 - rust
 - jupyter
 - pythonEnv
+- assembly
