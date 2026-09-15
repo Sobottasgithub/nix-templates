@@ -34,6 +34,7 @@
             # FIXME: add pkgs packages here
             sops
             age
+            jq
           ];
 
           create-secret = pkgs.callPackage ./packages/create-secret.nix { };
