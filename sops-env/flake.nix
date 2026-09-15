@@ -32,9 +32,15 @@
         let
           pkgsPackages = with pkgs; [
             # FIXME: add pkgs packages here
+            sops
+            age
           ];
+
+          create-secret = pkgs.callPackage ./packages/create-secret.nix { };
+
           packages = [
             # FIXME: add packages you defined here
+            create-secret
           ]
           ++ pkgsPackages;
         in
