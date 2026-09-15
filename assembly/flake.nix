@@ -1,5 +1,5 @@
 {
-  description = "C++ template";
+  description = "Assembly template";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -13,7 +13,6 @@
 
       version = "1.2";
       packagesList = with pkgs; [
-        cmake
         gcc
         gnumake
       ];
@@ -22,23 +21,25 @@
 
       packages.${system} = {
         default = pkgs.stdenv.mkDerivation {
-          pname = "cpp-template";
+          pname = "assembly";
           inherit version;
           src = ./.;
 
           buildInputs = packagesList;
 
-          configurePhase = ''
-            cmake -B build -S $src -DCMAKE_BUILD_TYPE=Release
-          '';
+          dontConfigure = true;
 
           buildPhase = ''
-            cmake --build build
+            gcc -no-pie $src/src/main.s -o main
           '';
 
           installPhase = ''
-            cmake --install build --prefix=$out
-            cp LICENSE $out/
+            mkdir -p $out/bin
+            cp main $out/bin/assembly
+
+            if [ -f LICENSE ]; then
+              cp LICENSE $out/
+            fi
           '';
         };
       };
@@ -47,7 +48,6 @@
         let
           devPackages = packagesList ++ [
            pkgs.bridge-utils
-           pkgs.clang-tools
 
            pkgs.man-db
            pkgs.man-pages

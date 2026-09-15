@@ -83,6 +83,11 @@
           devPackages = packagesList ++ [
             pkgs.bridge-utils
             pkgs.clang-tools
+
+            pkgs.man-db
+            pkgs.man-pages
+            pkgs.man-pages-posix
+            pkgs.stdman
           ];
         in
         pkgs.mkShell {
@@ -91,7 +96,10 @@
           # bring build tools from our package
           inputsFrom = [ self.packages.${system}.default ];
 
+          extraOutputsToInstall = [ "man" "doc" ];
+
           shellHook = ''
+            export MANPATH="${pkgs.man-pages}/share/man:${pkgs.man-pages-posix}/share/man:$MANPATH"
             git status
             cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
           '';

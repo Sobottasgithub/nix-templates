@@ -20,15 +20,6 @@
           '';
         };
 
-        javaFX = {
-          path = ./javaFX;
-          description = "JavaFX template";
-          welcomeText = ''
-            # Getting started
-            - Run `nix run`
-          '';
-        };
-
         basic = {
           path = ./basic;
           description = "flake utils with devshell";
@@ -56,11 +47,31 @@
           '';
         };
 
+        cpp-lib = {
+          path = ./cpp-lib;
+          description = "Cpp lib template";
+          welcomeText = ''
+            # Welcome to your cpp lib template!
+            Do not forget to change all template occurences with your name.
+            - Run 'nix run .#test' to test your lib
+          '';
+        };
+
+        assembly = {
+          path = ./assembly;
+          description = "Assembly template";
+          welcomeText = ''
+            # Getting started
+            - Run `nix run`
+          '';
+        };
+
         latex = {
           path = ./latex;
           description = "Latex template";
           welcomeText = ''
             # Have fun with your fully working latex experience!
+            to build use nix build
           '';
         };
 
@@ -90,6 +101,19 @@
             # Getting started
             - Run `nix run` to launch the php development server
           '';
+        };
+
+        jupyter = {
+          path = ./jupyter;
+          description = "Jupyterlab flake";
+          welcomeText = ''
+            Run `nix run .#jupyterlab` to start a jupyterlab instance
+          '';
+        };
+
+        pythonEnv = {
+          path = ./pythonEnv;
+          description = "Python Environment";
         };
 
         templates.default = {
