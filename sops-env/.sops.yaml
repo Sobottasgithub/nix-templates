@@ -1,6 +1,1 @@
 creation_rules:
-  - path_regex: secrets(/|\\)bentzin\.json$
-    key_groups:
-      - age:
-          - age10jfxjrdgcc6pgnrdkjzynlxy9g4ajevkgusyeegq69zezk7rqczqrksgp2
-          - age14rtwv5tpnt4kxs6rgp5jd8la8mfrllds6xv96etfcg5epwslvejq3wdtel
