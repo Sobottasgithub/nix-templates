@@ -8,6 +8,7 @@ nix flake new YOURDIRECTORY --template github:Sobottasgithub/nix-templates#TEMPL
 
 # Templates
 - basic
+- sops-env
 - empty
 - cpp-lib
 - cpp-multi
