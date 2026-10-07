@@ -52,6 +52,7 @@
               ];
 
               # If checks require network access, they need to be disabled. You dont need to disable all checks though!
+              excludedPackages = [ ];
               doCheck = true;
 
               meta = { };
@@ -59,11 +60,16 @@
 
           pkgsPackages = with pkgs; [
             # FIXME: add pkgs packages here
+            go
           ];
           packages = [
             # FIXME: add packages you defined here
           ]
           ++ pkgsPackages;
+
+          # These packages are only used as development tools - they are not required for building your packages
+          devPackages = [ ];
+
         in
         {
           packages = {
@@ -72,8 +78,7 @@
           };
           devShells.default = pkgs.mkShell {
             name = "${projectName}-devshell";
-
-            inherit packages;
+            packages = packages ++ devPackages;
           };
         };
       flake = {
