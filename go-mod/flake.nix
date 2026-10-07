@@ -68,7 +68,10 @@
           ++ pkgsPackages;
 
           # These packages are only used as development tools - they are not required for building your packages
-          devPackages = [ ];
+          devPackages = [
+            pkgs.gopls
+            pkgs.delve
+          ];
 
         in
         {
