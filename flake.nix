@@ -121,6 +121,11 @@
           description = "Basic flake with sops setup";
         };
 
+        go-mod = {
+          path = ./go-mod;
+          description = "Flake for building a go module";
+        };
+
         templates.default = {
           path = ./empty;
           description = "Empty flake";
