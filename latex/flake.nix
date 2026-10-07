@@ -52,8 +52,15 @@
           '';
 
           installPhase = ''
-            mkdir -p $out
-            cp ./build/main.pdf $out/
+            mkdir -p $out/share/doc $out/bin
+            cp ./build/main.pdf $out/share/doc/main.pdf
+
+            cat <<EOF > $out/bin/latex-template
+            #!/bin/sh
+            ${pkgs.xdg-utils}/bin/xdg-open $out/share/doc/main.pdf
+            EOF
+
+            chmod +x $out/bin/latex-template
           '';
         };
       };

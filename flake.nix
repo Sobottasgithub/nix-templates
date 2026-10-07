@@ -116,6 +116,11 @@
           description = "Python Environment";
         };
 
+        sops-env = {
+          path = ./sops-env;
+          description = "Basic flake with sops setup";
+        };
+
         templates.default = {
           path = ./empty;
           description = "Empty flake";
